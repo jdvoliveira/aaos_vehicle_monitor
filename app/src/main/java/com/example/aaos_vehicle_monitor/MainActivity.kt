@@ -8,9 +8,13 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var lastUpdatedText: TextView
     private lateinit var alertBanner: LinearLayout
     private lateinit var alertMessage: TextView
     private lateinit var speedValue: TextView
@@ -37,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        lastUpdatedText = findViewById(R.id.lastUpdatedText)
         alertBanner = findViewById(R.id.alertBanner)
         alertMessage = findViewById(R.id.alertMessage)
         speedValue = findViewById(R.id.speedValue)
@@ -83,6 +88,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun render(state: VehicleState) {
+        val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
+        lastUpdatedText.text = "Last updated: $currentTime"
+
         speedValue.text = "${state.speedKmh} km/h"
         batteryValue.text = "${state.batteryPercent}%"
         tempValue.text = "${state.outsideTempC}°C"
