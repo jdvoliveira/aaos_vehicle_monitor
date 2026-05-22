@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var batteryValue: TextView
     private lateinit var tempValue: TextView
     private lateinit var doorValue: TextView
+
+    private lateinit var toggleDoorsButton: Button
+    private lateinit var overspeedButton: Button
+    private lateinit var lowBatteryButton: Button
+    private lateinit var resetButton: Button
 
     private val repository = VehicleRepository()
     private val handler = Handler(Looper.getMainLooper())
@@ -37,6 +43,31 @@ class MainActivity : AppCompatActivity() {
         batteryValue = findViewById(R.id.batteryValue)
         tempValue = findViewById(R.id.tempValue)
         doorValue = findViewById(R.id.doorValue)
+
+        toggleDoorsButton = findViewById(R.id.toggleDoorsButton)
+        overspeedButton = findViewById(R.id.overspeedButton)
+        lowBatteryButton = findViewById(R.id.lowBatteryButton)
+        resetButton = findViewById(R.id.resetButton)
+
+        toggleDoorsButton.setOnClickListener {
+            repository.toggleDoors()
+            render(repository.nextState())
+        }
+
+        overspeedButton.setOnClickListener {
+            repository.triggerOverspeed()
+            render(repository.nextState())
+        }
+
+        lowBatteryButton.setOnClickListener {
+            repository.triggerLowBattery()
+            render(repository.nextState())
+        }
+
+        resetButton.setOnClickListener {
+            repository.reset()
+            render(repository.nextState())
+        }
 
         render(repository.nextState())
     }
@@ -63,6 +94,10 @@ class MainActivity : AppCompatActivity() {
             state.speedKmh > 120 -> {
                 alertMessage.text = "Overspeed warning"
                 alertBanner.setBackgroundColor(Color.parseColor("#B71C1C"))
+            }
+            state.batteryPercent < 15 -> {
+                alertMessage.text = "Low battery"
+                alertBanner.setBackgroundColor(Color.parseColor("#EF6C00"))
             }
             anyDoorOpen -> {
                 alertMessage.text = "Door open"
