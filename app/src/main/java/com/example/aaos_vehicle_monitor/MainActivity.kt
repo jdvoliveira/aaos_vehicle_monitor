@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -101,19 +102,19 @@ class MainActivity : AppCompatActivity() {
         when {
             state.speedKmh > 120 -> {
                 alertMessage.text = "Overspeed warning"
-                alertBanner.setBackgroundColor(Color.parseColor("#B71C1C"))
+                alertBanner.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
             }
             state.batteryPercent < 15 -> {
                 alertMessage.text = "Low battery"
-                alertBanner.setBackgroundColor(Color.parseColor("#EF6C00"))
+                alertBanner.setBackgroundColor(ContextCompat.getColor(this, R.color.orange))
             }
             anyDoorOpen -> {
                 alertMessage.text = "Door open"
-                alertBanner.setBackgroundColor(Color.parseColor("#F9A825"))
+                alertBanner.setBackgroundColor(ContextCompat.getColor(this, R.color.yellow))
             }
             else -> {
                 alertMessage.text = "All systems normal"
-                alertBanner.setBackgroundColor(Color.parseColor("#2E7D32"))
+                alertBanner.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
             }
         }
     }
