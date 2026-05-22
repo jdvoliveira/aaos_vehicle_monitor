@@ -17,94 +17,170 @@
             android:layout_height="wrap_content"
             android:text="Vehicle Monitor"
             android:textColor="#FFFFFF"
-            android:textSize="28sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="12dp" />
 
         <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AAOS demo dashboard"
+            android:textColor="#8B95A1"
+            android:textSize="16sp"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
             android:id="@+id/alertBanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="All systems normal"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:orientation="vertical"
             android:padding="16dp"
             android:background="#2E7D32"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/alertTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STATUS"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alertMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All systems normal"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Speed"
-                android:textColor="#AAB4BE"
-                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1B2130"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp">
 
-            <TextView
-                android:id="@+id/speedValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0 km/h"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speed"
+                    android:textColor="#8B95A1"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Battery"
-                android:textColor="#AAB4BE"
-                android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/speedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 km/h"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/batteryValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100%"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1B2130"
+                android:padding="16dp"
+                android:layout_marginStart="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Outside Temperature"
-                android:textColor="#AAB4BE"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Battery"
+                    android:textColor="#8B95A1"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/tempValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="22°C"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
+                <TextView
+                    android:id="@+id/batteryValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100%"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
+        </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Doors"
-                android:textColor="#AAB4BE"
-                android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <TextView
-                android:id="@+id/doorValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Closed"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1B2130"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Outside Temp"
+                    android:textColor="#8B95A1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tempValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="22°C"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="#1B2130"
+                android:padding="16dp"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doors"
+                    android:textColor="#8B95A1"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/doorValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Closed"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="18dp" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

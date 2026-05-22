@@ -4,11 +4,14 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var alertBanner: TextView
+
+    private lateinit var alertBanner: LinearLayout
+    private lateinit var alertMessage: TextView
     private lateinit var speedValue: TextView
     private lateinit var batteryValue: TextView
     private lateinit var tempValue: TextView
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         alertBanner = findViewById(R.id.alertBanner)
+        alertMessage = findViewById(R.id.alertMessage)
         speedValue = findViewById(R.id.speedValue)
         batteryValue = findViewById(R.id.batteryValue)
         tempValue = findViewById(R.id.tempValue)
@@ -57,15 +61,15 @@ class MainActivity : AppCompatActivity() {
 
         when {
             state.speedKmh > 120 -> {
-                alertBanner.text = "Overspeed warning"
+                alertMessage.text = "Overspeed warning"
                 alertBanner.setBackgroundColor(Color.parseColor("#B71C1C"))
             }
             anyDoorOpen -> {
-                alertBanner.text = "Door open"
+                alertMessage.text = "Door open"
                 alertBanner.setBackgroundColor(Color.parseColor("#F9A825"))
             }
             else -> {
-                alertBanner.text = "All systems normal"
+                alertMessage.text = "All systems normal"
                 alertBanner.setBackgroundColor(Color.parseColor("#2E7D32"))
             }
         }
