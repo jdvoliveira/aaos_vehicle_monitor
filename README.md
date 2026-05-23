@@ -12,16 +12,19 @@ This project was created to explore **automotive HMI concepts** using the **AAOS
   - Battery
   - Outside temperature
   - Door state
+  -  Drive mode
 - Status banner with visual alerts:
   - All systems normal
   - Door open
   - Low battery
   - Overspeed warning
 - Manual simulation controls:
+  - Change drive mode
   - Toggle doors
   - Trigger overspeed
   - Trigger low battery
   - Reset state
+- Recent events / alert log
 - "Last updated" timestamp
 
 ## Tech stack
@@ -62,7 +65,9 @@ The app uses a small in-memory `VehicleRepository` to simulate changing vehicle 
 A periodic UI refresh updates the dashboard with:
 - random telemetry changes
 - forced states triggered by manual buttons
+- drive mode changes
 - alert color changes depending on severity
+- event history updates when the dashboard state changes
 
 This makes it easy to demonstrate the app in the AAOS emulator without relying on real vehicle APIs.
 
@@ -80,7 +85,7 @@ This makes it easy to demonstrate the app in the AAOS emulator without relying o
 1. Open the project in **Android Studio**
 2. Create or start an **Android Automotive OS emulator**
 3. Run the app with the **Play** button
-4. Use the simulation buttons to trigger different dashboard states
+4. Use the simulation controls to trigger different dashboard states
 
 ## Automotive note
 
@@ -96,7 +101,7 @@ All vehicle signals are currently **mocked/simulated** for demonstration purpose
 
 ## Repository description
 
-**AAOS demo dashboard built with Kotlin and XML for Android Automotive OS, featuring simulated vehicle telemetry and manual test controls.**
+**AAOS demo dashboard built with Kotlin and XML for Android Automotive OS, featuring simulated vehicle telemetry, drive modes, event history and manual test controls.**
 
 ## Topics
 
