@@ -1,6 +1,5 @@
 package com.example.aaos_vehicle_monitor
 
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper

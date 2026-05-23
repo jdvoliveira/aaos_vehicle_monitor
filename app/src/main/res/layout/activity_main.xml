@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -28,7 +29,7 @@
             android:text="AAOS demo dashboard"
             android:textColor="@color/gray"
             android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="0dp" />
 
         <TextView
             android:id="@+id/lastUpdatedText"
@@ -45,7 +46,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:background="@color/green"
+            android:background="@drawable/status_background"
             android:layout_marginBottom="20dp">
 
             <TextView
@@ -78,10 +79,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:background="@color/blue"
+                android:background="@drawable/card_background"
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -105,10 +106,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/blue"
+                android:background="@drawable/card_background"
                 android:padding="16dp"
                 android:layout_marginStart="8dp">
 
@@ -139,10 +140,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/blue"
+                android:background="@drawable/card_background"
                 android:padding="16dp"
                 android:layout_marginEnd="8dp">
 
@@ -166,10 +167,10 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="140dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@color/blue"
+                android:background="@drawable/card_background"
                 android:padding="16dp"
                 android:layout_marginStart="8dp">
 
@@ -196,7 +197,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/blue"
+            android:background="@drawable/card_background"
             android:padding="16dp"
             android:layout_marginTop="16dp">
 
@@ -219,16 +220,23 @@
 
             <Button
                 android:id="@+id/changeModeButton"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button_background"
+                app:backgroundTint="@null"
                 android:text="Change Mode"
-                android:layout_marginTop="16dp" />
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/panel_background"
+            android:padding="16dp"
             android:layout_marginTop="24dp">
 
             <TextView
@@ -252,6 +260,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Toggle Doors"
+                    android:textSize="16sp"
+                    android:background="@drawable/button_background"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:layout_marginEnd="8dp" />
 
                 <Button
@@ -260,6 +273,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Overspeed"
+                    android:textSize="16sp"
+                    android:background="@drawable/button_background"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
@@ -275,6 +293,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Low Battery"
+                    android:textSize="16sp"
+                    android:background="@drawable/button_background"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:layout_marginEnd="8dp" />
 
                 <Button
@@ -283,6 +306,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Reset"
+                    android:textSize="16sp"
+                    android:background="@drawable/button_background"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
@@ -292,7 +320,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="24dp"
+            android:background="@drawable/panel_background"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/eventHistoryTitle"
@@ -307,7 +337,7 @@
                 android:id="@+id/eventHistoryText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue"
+                android:background="@drawable/card_background"
                 android:padding="16dp"
                 android:text="No events yet"
                 android:textColor="@color/white"

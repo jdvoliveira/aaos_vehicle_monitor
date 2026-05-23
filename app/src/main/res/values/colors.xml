@@ -9,4 +9,5 @@
     <color name="red">#B71C1C</color>
     <color name="orange">#EF6C00</color>
     <color name="yellow">#F9A825</color>
+    <color name="button_background">#2B3242</color>
 </resources>
