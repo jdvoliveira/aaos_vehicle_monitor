@@ -58,6 +58,9 @@ The goal of this project was to build a small but presentable **AAOS prototype**
 ### Overspeed warning
 ![Overspeed warning](docs/screenshot-overspeed.png)
 
+### Controls and recent rvents
+![Controls and recent events](docs/screenshot-controls.png)
+
 ## How it works
 
 The app uses a small in-memory `VehicleRepository` to simulate changing vehicle data over time.
