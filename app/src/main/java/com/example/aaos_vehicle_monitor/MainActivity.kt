@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var batteryValue: TextView
     private lateinit var tempValue: TextView
     private lateinit var doorValue: TextView
+    private lateinit var driveModeValue: TextView
 
+    private lateinit var changeModeButton: Button
     private lateinit var toggleDoorsButton: Button
     private lateinit var overspeedButton: Button
     private lateinit var lowBatteryButton: Button
@@ -54,11 +56,19 @@ class MainActivity : AppCompatActivity() {
         batteryValue = findViewById(R.id.batteryValue)
         tempValue = findViewById(R.id.tempValue)
         doorValue = findViewById(R.id.doorValue)
+        driveModeValue = findViewById(R.id.driveModeValue)
 
+        changeModeButton = findViewById(R.id.changeModeButton)
         toggleDoorsButton = findViewById(R.id.toggleDoorsButton)
         overspeedButton = findViewById(R.id.overspeedButton)
         lowBatteryButton = findViewById(R.id.lowBatteryButton)
         resetButton = findViewById(R.id.resetButton)
+
+        changeModeButton.setOnClickListener {
+            val newMode = repository.cycleDriveMode()
+            appendEvent("Drive mode changed to $newMode")
+            render(repository.nextState())
+        }
 
         toggleDoorsButton.setOnClickListener {
             repository.toggleDoors()
@@ -127,6 +137,8 @@ class MainActivity : AppCompatActivity() {
 
         val anyDoorOpen = state.leftDoorOpen || state.rightDoorOpen
         doorValue.text = if (anyDoorOpen) "Open" else "Closed"
+
+        driveModeValue.text = state.driveMode
 
         when {
             state.speedKmh > 120 -> {

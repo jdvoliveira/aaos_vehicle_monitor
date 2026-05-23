@@ -196,6 +196,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@color/blue"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drive Mode"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/driveModeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eco"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="18dp" />
+
+            <Button
+                android:id="@+id/changeModeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Mode"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginTop="24dp">
 
             <TextView
@@ -252,6 +285,7 @@
                     android:text="Reset"
                     android:layout_marginStart="8dp" />
             </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout

@@ -5,5 +5,6 @@ data class VehicleState(
     val batteryPercent: Int,
     val outsideTempC: Int,
     val leftDoorOpen: Boolean,
-    val rightDoorOpen: Boolean
+    val rightDoorOpen: Boolean,
+    val driveMode: String
 )

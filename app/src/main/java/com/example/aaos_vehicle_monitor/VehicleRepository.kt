@@ -9,6 +9,7 @@ class VehicleRepository {
     private var temp = 21
     private var leftDoorOpen = false
     private var rightDoorOpen = false
+    private var driveMode = "Eco"
 
     private var forceOverspeed = false
     private var forceLowBattery = false
@@ -33,7 +34,8 @@ class VehicleRepository {
             batteryPercent = battery,
             outsideTempC = temp,
             leftDoorOpen = leftDoorOpen,
-            rightDoorOpen = rightDoorOpen
+            rightDoorOpen = rightDoorOpen,
+            driveMode = driveMode
         )
     }
 
@@ -51,12 +53,22 @@ class VehicleRepository {
         forceLowBattery = !forceLowBattery
     }
 
+    fun cycleDriveMode(): String {
+        driveMode = when (driveMode) {
+            "Eco" -> "City"
+            "City" -> "Sport"
+            else -> "Eco"
+        }
+        return driveMode
+    }
+
     fun reset() {
         speed = 42
         battery = 87
         temp = 21
         leftDoorOpen = false
         rightDoorOpen = false
+        driveMode = "Eco"
         forceOverspeed = false
         forceLowBattery = false
     }
